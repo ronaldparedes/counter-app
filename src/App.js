@@ -2,23 +2,17 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux';
 import './App.css';
+import * as actions from './actions';
+import reducer from "./reducer";
 
 // Redux initial State object
 const initialState = {
   count: 0,
 }
-// Redux Reducer with signature (state, action) => state
-function myReducer(myState, myAction){
-  switch(myAction.type){
-    case 'INCREMENT': return { count: myState.count + 1 }
-    case 'DECREMENT' : return { count: myState.count - 1 }
-    default: return myState
-  }
-}
 
 // Redux Store
 let myStore = createStore(
-  myReducer,
+  reducer,
   initialState,
   // Redux-devtools extention code:
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -33,10 +27,10 @@ const mapStateToProps = (store) => {
 const mapDispatchToProps = (dispatch) => {
   return { 
     increaseClicked: () => {
-      dispatch({type: "INCREMENT"})
+      dispatch(actions.increment())
     },
     decreaseClicked: () => {
-      dispatch({type: "DECREMENT"})
+      dispatch(actions.decrement())
     }
   }
 };
