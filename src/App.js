@@ -1,77 +1,69 @@
 import React from 'react';
-import { createStore } from 'redux';
-import { Provider, connect } from 'react-redux';
-import './App.css';
-import * as actions from './actions';
-import reducer from "./reducer";
+import { Switch, Route, Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-// Redux initial State object
-const initialState = {
-  count: 0,
-}
 
-// Redux Store
-let myStore = createStore(
-  reducer,
-  initialState,
-  // Redux-devtools extention code:
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
- 
-// React-Redux map state to props
-const mapStateToProps = (store) => {
-  return { value: store.count }
-};
-
-// React-Redux map dispatch to props
-const mapDispatchToProps = (dispatch) => {
-  return { 
-    increaseClicked: () => {
-      dispatch(actions.increment())
-    },
-    decreaseClicked: () => {
-      dispatch(actions.decrement())
-    }
-  }
-};
-
-const Display = ({value}) => (
-  <h1>{value}</h1>
+const Header = () => (
+  <header>
+    <h1>This is the Header</h1>
+    <nav>
+      <ul>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/about'>About</Link></li>
+        <li><Link to='/content'>Content</Link></li>
+      </ul>
+    </nav>
+  </header>
+  
 );
 
-const Control = ({increaseClicked, decreaseClicked}) => {
-  return (
-    <div>
-      <button onClick={increaseClicked}> 
-        Increase  
-      </button>
-      <button onClick={decreaseClicked}> 
-        Decrease 
-      </button>
-    </div>
-  );
-};
+const StyledHome = styled.div`
+  height: 100vh;
+  color: whitesmoke;
+  background-color: lightslategray;
+`;
+const Home = () => (
+  <StyledHome>
+    <h1>This is the HOME</h1>
+  </StyledHome>
+);
 
-// React-redux connected Display component (state only, no dispatch)
-const VisibleDisplay = connect(
-  mapStateToProps
- )(Display);
+const StyledAbout = styled.div`
+  height: 100vh;
+  color: yellowgreen;
+  background-color: #555;
+`;
+const About = () => (
+  <StyledAbout>
+    <h1>This is the ABOUT</h1>
+  </StyledAbout>
+);
 
-// React-redux connected Control component (no state, dispatch only)
-const WorkingControl = connect(
-  null,
-  mapDispatchToProps
-)(Control);
-
-
+const StyledContent = styled.div`
+  height: 100vh;
+  color: blueviolet;
+  background-color: paleturquoise;
+`;
+const Content = () => (
+  <StyledContent>
+    <h1>This is the CONTENT</h1>
+  </StyledContent>
+);
+const Main =  () => (
+  <main>
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route path='/about' component={About} />
+      <Route path='/content' component={Content} />
+      <h2>This is the Main section</h2>
+    </Switch>
+  </main>
+);
 const App = () => (
-  <Provider store={myStore}>
-    <div className="App">
-      <h1>Counter</h1>
-      <VisibleDisplay />
-      <WorkingControl />
-    </div>
-  </Provider>
+  <div>
+    <Header/>
+    <Main />
+  </div>
 );
 
 export default App;

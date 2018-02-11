@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-const myData = {
-  Name: 'Ronald',
-  LastName: 'Paredes'
-}
-localStorage.setItem('myLocalState', JSON.stringify(myData));
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>, 
+  document.getElementById('root'));
 
-console.table(JSON.parse(localStorage.getItem('myLocalState')));
+registerServiceWorker();
