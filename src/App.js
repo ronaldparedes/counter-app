@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -49,13 +49,25 @@ const Content = () => (
     <h1>This is the CONTENT</h1>
   </StyledContent>
 );
+
+const Styled404 = styled.div`
+  height: 100vh;
+  color: red;
+  background-color: blanchedalmond;
+`;
+const NotFound = ({match, location, history}) => (
+  <Styled404>
+    <h1>404 PAGE NOT FOUND!</h1>
+  </Styled404>
+);
 const Main =  () => (
   <main>
     <Switch>
       <Route exact path='/' component={Home} />
       <Route path='/about' component={About} />
       <Route path='/content' component={Content} />
-      <h2>This is the Main section</h2>
+      <Route path='/404' component={NotFound} />
+      <Redirect to='/404' />
     </Switch>
   </main>
 );
