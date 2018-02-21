@@ -11,7 +11,7 @@ const StyledCard = styled.div`
   margin-left: 20px;
   color: #212C43;
   background: #FFF;
-  height: 252px;
+  min-height: 252px;
   width: 270px;
   font-family: "PT Sans";
   font-weight: 400;
