@@ -1,22 +1,29 @@
 import React from 'react';
+import styled from 'styled-components';
 import StyledGlobal from '../global/global';
 import scrollToTop from '../util/scrollToTop';
 import HeroSection from '../components/HeroSection';
 import ScrollUp from '../components/ScrollUp';
 import banner from '../img/banner/blog-banner.jpg';
-import homeland from '../img/clients/homeland.png';
-import DoA from '../img/clients/Dept_of_Army.jpg';
-import USPTO from '../img/clients/US_Patent.png';
-import DoD from '../img/clients/DoD.jpg';
+import clients from '../components/clients';
+
 const StyledPorfolio = StyledGlobal.extend`
   color: #212C43;
   background-color: #FFF;
   font-size: 2.45rem;
   padding-top: 52px;
-  padding-bottom: 63px;
-  img{
-    width: 200px;
+  h3{
+    margin: 0;
+    font-family: "PT Sans";
+    font-weight: 400;
   }
+`;
+
+const Clients = styled.div`
+  display: flex;
+  overflow: auto;
+  flex-wrap: wrap;
+  margin-top: 30px;
 `;
 
 const HeroContent = StyledGlobal.extend`
@@ -39,9 +46,23 @@ const HeroContent = StyledGlobal.extend`
     font-size: 9rem;
   }
 `;
+
+const ImgCont = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width :250px;
+  height: 250px;
+  &:hover > img {
+    width: 210px;
+  }
+  img{
+    transition: width .4s ease-in-out;
+    width: 200px;
+  }
+`;
 const Porfolio = () => {
   scrollToTop();
-  const clients = [homeland, DoA, USPTO, DoD];
   return (
     <div>
       <HeroSection banner={banner} brightness={0.8}>
@@ -54,7 +75,9 @@ const Porfolio = () => {
       </HeroSection>
       <StyledPorfolio>
         <h3>Our Clients:</h3>
-        {clients.map((client, index) => (<img src={client} alt={index} key={index}/>))}
+        <Clients>
+          {clients.map((client, index) => (<ImgCont><img src={client} alt={index} key={index}/></ImgCont>))}
+        </Clients>
       </StyledPorfolio>
       <ScrollUp />
     </div>

@@ -29,6 +29,7 @@ const StyledInfoFront = styled.div`
   background-color: rgba(232,232,221,0.5);
   box-shadow: 0 0 0 10px rgba(232,232,221,0.2), 0 0 0 3px #e8e8dd;
   font-family: 'Oswald', sans-serif;
+  font-weight: normal;
   color: #162a43;
   text-shadow: 0 1px 0 #e8e8dd;
   text-align: center;

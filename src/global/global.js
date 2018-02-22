@@ -5,8 +5,8 @@ export const Wrapper = styled.div`
 `;
 
 const StyledGlobal = Wrapper.extend`
-  overflow: hidden;
-  height: 100vh;
+  min-height: 50vh;
+  padding-bottom: 150px;
 `;
 
 export default StyledGlobal;

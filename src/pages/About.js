@@ -13,8 +13,6 @@ const StyledAbout = StyledGlobal.extend`
   justify-content: space-between;
   padding-top: 52px;
   padding-bottom: 63px;
-  height: 420px;
-  color: yellowgreen;
   background-color: #FFF;
 `;
 

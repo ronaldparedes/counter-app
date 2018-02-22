@@ -9,8 +9,6 @@ const StyledHeader = Wrapper.extend`
   background-color: #11296F;
   color: #fff;
   font-size: 1.4rem;
-  position: sticky;
-  top:0;
   overflow: hidden;
   p{
     font-size: 1.2rem;
