@@ -4,10 +4,19 @@ import scrollToTop from '../util/scrollToTop';
 import HeroSection from '../components/HeroSection';
 import ScrollUp from '../components/ScrollUp';
 import banner from '../img/banner/blog-banner.jpg';
-
+import homeland from '../img/clients/homeland.png';
+import DoA from '../img/clients/Dept_of_Army.jpg';
+import USPTO from '../img/clients/US_Patent.png';
+import DoD from '../img/clients/DoD.jpg';
 const StyledPorfolio = StyledGlobal.extend`
   color: #212C43;
   background-color: #FFF;
+  font-size: 2.45rem;
+  padding-top: 52px;
+  padding-bottom: 63px;
+  img{
+    width: 200px;
+  }
 `;
 
 const HeroContent = StyledGlobal.extend`
@@ -32,6 +41,7 @@ const HeroContent = StyledGlobal.extend`
 `;
 const Porfolio = () => {
   scrollToTop();
+  const clients = [homeland, DoA, USPTO, DoD];
   return (
     <div>
       <HeroSection banner={banner} brightness={0.8}>
@@ -43,7 +53,8 @@ const Porfolio = () => {
         </HeroContent>
       </HeroSection>
       <StyledPorfolio>
-        <h1>This is the Porfolio</h1>
+        <h3>Our Clients:</h3>
+        {clients.map((client, index) => (<img src={client} alt={index} key={index}/>))}
       </StyledPorfolio>
       <ScrollUp />
     </div>
