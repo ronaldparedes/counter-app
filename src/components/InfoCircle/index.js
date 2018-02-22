@@ -74,10 +74,10 @@ const StyledInfoBack = StyledInfoFront.extend`
 
 const InfoCircle = (props) => (
   <StyledContatiner>
-    <StyledInfoFront><h4> {props.children} </h4> </StyledInfoFront>
+    <StyledInfoFront><h4> {props.title} </h4> </StyledInfoFront>
     <StyledInfoBack>
-      <h4> {props.children} </h4> 
-      <p> {props.paragraph} </p>
+      <h4> {props.title} </h4> 
+      <p> {props.children} </p>
       <Link to={props.link} />
     </StyledInfoBack>
   </StyledContatiner>

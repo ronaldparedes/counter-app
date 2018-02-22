@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 import StyledGlobal from '../global/global';
 import scrollToTop from '../util/scrollToTop';
 import banner from '../img/banner/home-banner-1.jpg';
+import HeroSection from '../components/HeroSection';
+import StyledHeroContent from '../components/StyledHeroContent';
 import InfoCircle from '../components/InfoCircle';
 import InfoCard from '../components/InfoCard';
 import ScrollUp from '../components/ScrollUp';
-import HeroSection from '../components/HeroSection';
 
 const StyledAbout = StyledGlobal.extend`
   display: flex;
@@ -16,11 +16,8 @@ const StyledAbout = StyledGlobal.extend`
   background-color: #FFF;
 `;
 
-const HeroContent = styled.div`
-  display: flex;
+const StyledAboutHero = StyledHeroContent.extend`
   justify-content: center;
-  align-items: center;
-  height: 100%;
 `;
 
 class About extends React.Component{
@@ -31,23 +28,26 @@ class About extends React.Component{
     return (
       <div>
         <HeroSection banner={banner}>
-          <HeroContent>
-            <InfoCircle 
-              paragraph='Our core expertise includes building software utilizing a .Net and J2EE technology stack.'
-              link='/services'>
-              Services
-            </InfoCircle>
+          <StyledAboutHero>
             <InfoCircle
-              paragraph='Join our group of experience and passionate engineers. SierraSoft Corporation hires people from all walks of life.'
-              link='/careers'>
-              Careers
-            </InfoCircle>
+              link='/services'
+              title='Services'>
+              Our core expertise includes building software 
+              utilizing a .Net and J2EE technology stack.
+'            </InfoCircle>
             <InfoCircle
-              paragraph='By collaborating with your agency, we create user-focused solutions so you can concentrate on your mission.'
-              link='/portfolio'>
-              Portfolio
+              link='/careers'
+              title='Careers'>
+              Join our group of experience and passionate engineers. 
+              SierraSoft Corporation hires people from all walks of life.
+ '           </InfoCircle>
+            <InfoCircle
+              link='/portfolio'
+              title='Portfolio'>
+              By collaborating with your agency, we create user-focused 
+              solutions so you can concentrate on your mission.
             </InfoCircle>
-          </HeroContent>
+          </StyledAboutHero>
         </HeroSection>
         <StyledAbout>
           <InfoCard

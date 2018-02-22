@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import benefitsArrow from '../../img/benefits-arrow.svg';
+import benefitsArrow from '../../img/benefits-arrows.svg';
 
 const StyledCard = styled.div`
   display: flex;
@@ -28,11 +28,12 @@ const StyledCard = styled.div`
   a{
     display: inline-block;
     background: url(${benefitsArrow}) no-repeat;
+    background-size: cover;
     width: 26px;
     height: 26px;
   }
   a:hover{
-    filter: brightness(0%);
+    background-position-y: -26px;
   }
 `;
 

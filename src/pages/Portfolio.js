@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import StyledGlobal from '../global/global';
 import scrollToTop from '../util/scrollToTop';
 import HeroSection from '../components/HeroSection';
+import StyledHeroContent from '../components/StyledHeroContent';
 import ScrollUp from '../components/ScrollUp';
 import banner from '../img/banner/blog-banner.jpg';
 import clients from '../components/clients';
@@ -26,27 +27,6 @@ const Clients = styled.div`
   margin-top: 30px;
 `;
 
-const HeroContent = StyledGlobal.extend`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100%;
-  h2{
-    line-height: 3rem;
-    text-transform: uppercase;
-    font-family: "Oswald", sans-serif;
-    color: #FFF;
-    font-size: 3rem;
-    font-weight: 400;
-    display: block;
-  }
-  small{
-    line-height: 9rem;
-    display: block;
-    font-size: 9rem;
-  }
-`;
-
 const ImgCont = styled.div`
   display: flex;
   justify-content: center;
@@ -66,17 +46,17 @@ const Porfolio = () => {
   return (
     <div>
       <HeroSection banner={banner} brightness={0.8}>
-        <HeroContent>
+        <StyledHeroContent>
           <h2>
             Federal
             <small>Commercial</small>
           </h2>
-        </HeroContent>
+        </StyledHeroContent>
       </HeroSection>
       <StyledPorfolio>
         <h3>Our Clients:</h3>
         <Clients>
-          {clients.map((client, index) => (<ImgCont><img src={client} alt={index} key={index}/></ImgCont>))}
+          {clients.map((client) => (<ImgCont key={client}><img src={client} alt={client} /></ImgCont>))}
         </Clients>
       </StyledPorfolio>
       <ScrollUp />
