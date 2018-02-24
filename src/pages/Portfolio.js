@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import StyledGlobal from '../global/global';
+import StyledGlobal, { Wrapper } from '../global/global';
 import scrollToTop from '../util/scrollToTop';
 import HeroSection from '../components/HeroSection';
 import ScrollUp from '../components/ScrollUp';
@@ -26,7 +26,7 @@ const Clients = styled.div`
   margin-top: 30px;
 `;
 
-const HeroContent = StyledGlobal.extend`
+const HeroContent = Wrapper.extend`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -76,7 +76,7 @@ const Porfolio = () => {
       <StyledPorfolio>
         <h3>Our Clients:</h3>
         <Clients>
-          {clients.map((client, index) => (<ImgCont><img src={client} alt={index} key={index}/></ImgCont>))}
+          {clients.map((client) => (<ImgCont><img src={client} alt='' key={client.name}/></ImgCont>))}
         </Clients>
       </StyledPorfolio>
       <ScrollUp />

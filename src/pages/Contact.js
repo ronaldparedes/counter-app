@@ -1,5 +1,5 @@
 import React from 'react';
-import StyledGlobal from '../global/global';
+import StyledGlobal, { Wrapper } from '../global/global';
 import scrollToTop from '../util/scrollToTop';
 import HeroSection from '../components/HeroSection';
 import ScrollUp from '../components/ScrollUp';
@@ -9,7 +9,7 @@ const StyledContact = StyledGlobal.extend`
   background-color: #FFF;
 `;
 
-const HeroContent = StyledGlobal.extend`
+const HeroContent = Wrapper.extend`
   display: flex;
   justify-content: flex-start;
   align-items: center;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import benefitsArrow from '../../img/benefits-arrow.svg';
+import CtaArrow from '../CtaArrow';
 
 const StyledCard = styled.div`
   display: flex;
@@ -25,22 +25,20 @@ const StyledCard = styled.div`
     color: #999fad;
     font-size: 1.4rem;
   }
-  a{
-    display: inline-block;
-    background: url(${benefitsArrow}) no-repeat;
-    width: 26px;
-    height: 26px;
-  }
-  a:hover{
-    filter: brightness(0%);
-  }
 `;
 
 const InfoCard = (props) => (
   <StyledCard>
     <h2>{props.title}</h2>
     <p>{props.content}</p>
-    <Link to={props.link} />
+    <Link to={props.link}>
+      <CtaArrow 
+        width='26'
+        height='26'
+        normalFill='#7CCBFC' 
+        hoverFill='#000'
+      />
+    </Link>
   </StyledCard>
 );
 

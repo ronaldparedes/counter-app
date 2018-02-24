@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import ctaArrow from '../../img/call-to-action-arrows.svg';
+import CtaArrow from '../CtaArrow';
 
 const StyledContatiner = styled.div`
   transform-style: preserve-3d;
@@ -60,16 +60,6 @@ const StyledInfoBack = StyledInfoFront.extend`
     font-size: 1.2rem;
     padding: 0 2rem;
   }
-  a{
-    font-size: 0;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url(${ctaArrow}) no-repeat 0 0;
-  }
-  a:hover{
-    background-position-y: -20px;
-  }
 `;
 
 const InfoCircle = (props) => (
@@ -78,7 +68,13 @@ const InfoCircle = (props) => (
     <StyledInfoBack>
       <h4> {props.children} </h4> 
       <p> {props.paragraph} </p>
-      <Link to={props.link} />
+      <Link to={props.link}>
+        <CtaArrow 
+          width='20'
+          normalFill='#FFF' 
+          hoverFill='#000'
+        />
+      </Link>
     </StyledInfoBack>
   </StyledContatiner>
 );
