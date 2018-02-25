@@ -1,8 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { media } from '../../global/global';
 
-const StyledNavBar = styled.nav`
+const StyledNavBar = styled.div`
+  /* display: ${props => props.isVisible ? 'block' : 'none'} ;  */
+  display: none;
+  @media (${media.tablet}) {
+    display: block;
+  }
   ul{
     height: 100%;
     padding: 0;
@@ -16,7 +22,10 @@ const StyledNavBar = styled.nav`
     display: flex;
     height: inherit;
     position: relative;
-    padding: 0 15px;
+    padding: 0 10px;
+    @media(${media.desktop}){
+      padding: 0 15px;
+    }
     align-items: center;
   }
   .anchorContainer::after{

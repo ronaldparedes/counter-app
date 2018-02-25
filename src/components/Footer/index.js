@@ -4,8 +4,12 @@ import NavBar from '../NavBar';
 
 const StyledFooter = Wrapper.extend`
   display: flex;
-  justify-content: space-between;
-  height: 87px;
+  justify-content: center;
+  height: 60px;
+  @media (min-width: 700px) {
+    justify-content: space-between;
+    height: 90px;
+  }
   background-color: #11296F;
   color: #fff;
   font-size: 1.4rem;
@@ -23,7 +27,7 @@ const Footer = () => (
     <div>
       <p>© SierraSoft, 2018. All rights reserved. </p>
     </div>
-    <NavBar />
+    <NavBar isVisible={1}/>
   </StyledFooter>
 );
 

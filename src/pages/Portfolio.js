@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import StyledGlobal, { Wrapper } from '../global/global';
+import StyledGlobal, { Wrapper, media } from '../global/global';
 import scrollToTop from '../util/scrollToTop';
 import HeroSection from '../components/HeroSection';
 import ScrollUp from '../components/ScrollUp';
@@ -21,6 +21,7 @@ const StyledPorfolio = StyledGlobal.extend`
 
 const Clients = styled.div`
   display: flex;
+  justify-content: center;
   overflow: auto;
   flex-wrap: wrap;
   margin-top: 30px;
@@ -41,9 +42,13 @@ const HeroContent = Wrapper.extend`
     display: block;
   }
   small{
-    line-height: 9rem;
     display: block;
-    font-size: 9rem;
+    font-size: 7rem;
+    line-height: 7rem;
+    @media(${media.tablet}){
+      line-height: 9rem;
+      font-size: 9rem;
+    }
   }
 `;
 

@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Wrapper } from '../../global/global';
+import { Wrapper, media} from '../../global/global';
 import logo from '../../img/logo.png';
 import NavBar from '../NavBar';
 
 const StyledHeader = Wrapper.extend`
   display: flex;
-  justify-content: space-between;
-  height: 87px;
+  justify-content: flex-start;
+  height: 80px;
+  @media (${media.tablet}) {
+    justify-content: space-between;
+    height: 87px;
+  }
   background-color: #223e92;
   color: #fff;
   font-size: 1.4rem;
@@ -29,11 +33,13 @@ const StyledHeader = Wrapper.extend`
     transform: translateX(-1000px);
   }
   h3{
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 40px;
     margin: 0;
-  } 
+    @media (${media.tablet}) {
+      font-size: 1.3rem;
+    } 
 `;
 
 const Header = () => (

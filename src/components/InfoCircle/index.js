@@ -33,6 +33,7 @@ const StyledInfoFront = styled.div`
   color: #162a43;
   text-shadow: 0 1px 0 #e8e8dd;
   text-align: center;
+  user-select: none;
   transform-origin: 0 90px -90px;
   transition: all 0.4s ease-in-out;
   h4{

@@ -8,11 +8,10 @@ const StyledCard = styled.div`
   flex-direction: column;
   justify-content: flex-start ;
   align-items: flex-start;
-  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
   color: #212C43;
   background: #FFF;
-  min-height: 252px;
-  width: 270px;
   font-family: "PT Sans";
   font-weight: 400;
   h2{

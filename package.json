@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "grid-styled": "^3.2.1",
     "react": "^16.2.0",
     "react-custom-validation": "^0.5.7",
     "react-dom": "^16.2.0",
